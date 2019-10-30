@@ -6,7 +6,7 @@ app.get("/", (request, response) => {
 });
 app.listen(process.env.PORT);
 setInterval(() => {
-  http.get(`http://festive-topaz.glitch.me/`);
+  http.get(`http://gfc2.glitch.me/`);
 }, 280000);
  
 // كل البكجات الي ممكن تحتجها في اي بوت
@@ -69,8 +69,8 @@ client.on('ready',  () => {
   console.log('By : 3bker');
 });
 
-const developers = ['حط الايدي حقك هنا'];
-const adminprefix = "البرفكس حقك";
+const developers = ['566017227728486400'];
+const adminprefix = "!";
 client.on('message', message => {
     var argresult = message.content.split(` `).slice(1).join(' ');
       if (!developers.includes(message.author.id)) return;
