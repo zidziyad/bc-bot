@@ -18,3 +18,5 @@ client.on("message", function(message) {
     message.channel.send(`${args}`);
   }
 });
+
+client.login(token).catch(err => console.log{err});
