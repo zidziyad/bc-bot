@@ -63,6 +63,8 @@ client.on("message", function(message) {
     message.channel.send(`${args}`);
   }
 });
+const { GOOGLE_API_KEY } = require('./config');
+
 
 
 
