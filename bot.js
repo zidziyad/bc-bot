@@ -29,10 +29,10 @@ client.on("message", message => {
   if (message.content.startsWith("-bc")) {
     if (!message.channel.guild)
       return message.channel
-        .send("**هذا الأمر فقط للسيرفرات**")
+        .send("**this command for servers only**")
         .then(m => m.delete(5000));
     if (!message.member.hasPermission("ADMINISTRATOR"))
-      return message.channel.send("**للأسف لا تمتلك صلاحية** `ADMINISTRATOR`");
+      return message.channel.send("**You Don't have this permission** `ADMINISTRATOR`");
     let args = message.content
       .split(" ")
       .join(" ")
@@ -40,10 +40,10 @@ client.on("message", message => {
     let copy = "ScrpitBot";
     let request = `Requested By ${message.author.username}`;
     if (!args)
-      return message.reply("**يجب عليك كتابة كلمة او جملة لإرسال البرودكاست**");
+      return message.reply("**Pls type Thing to send**");
     message.channel
       .send(
-        `**هل أنت متأكد من إرسالك البرودكاست؟ \nمحتوى البرودكاست:** \` ${args}\``
+        `**Did you sure to send this ?:** \` ${args}\``
       )
       .then(msg => {
         msg
