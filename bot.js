@@ -129,24 +129,11 @@ client.on("message", message => {
   }
 });
 
-client.on("message", msg => {
-  
-  if (msg.content === "ddog") {
-    
-  message.channel.startTyping();
-  request({ uri: "https://dog.ceo/api/breeds/image/random", json: true }, (error, response, body) => {
-    if (error) throw new Error(error);
-    message.channel.stopTyping();
-    message.channel.send({
-      files: [{
-        attachment: body.message,
-        name: "dog.png"
-      }]
-    });
-  });
-
-  }
-});
+client.on("message", message => {
+  var prefix = "d";
+  var dog = [
+    "https://dog.ceo/api/breeds/image/random"
+  ];
 
 
 
