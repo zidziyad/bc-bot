@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const prefix = ['d'];
+const request = require("request");
 console.log("Scrpit By Dream");
 
 
@@ -127,6 +128,28 @@ client.on("message", message => {
       });
   }
 });
+
+client.on("message", msg => {
+  
+  if (msg.content === "ddog") {
+    
+exports.run = async (client, message, args) => { // eslint-disable-line no-unused-vars
+  message.channel.startTyping();
+  request({ uri: "https://dog.ceo/api/breeds/image/random", json: true }, (error, response, body) => {
+    if (error) throw new Error(error);
+    message.channel.stopTyping();
+    message.channel.send({
+      files: [{
+        attachment: body.message,
+        name: "dog.png"
+      }]
+    });
+  });
+};
+}
+});
+
+
 
 
 client.login(process.env.BOT_TOKEN1);
