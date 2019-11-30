@@ -133,7 +133,6 @@ client.on("message", msg => {
   
   if (msg.content === "ddog") {
     
-exports.run = async (client, message, args) => { // eslint-disable-line no-unused-vars
   message.channel.startTyping();
   request({ uri: "https://dog.ceo/api/breeds/image/random", json: true }, (error, response, body) => {
     if (error) throw new Error(error);
@@ -145,8 +144,8 @@ exports.run = async (client, message, args) => { // eslint-disable-line no-unuse
       }]
     });
   });
-};
-}
+
+  }
 });
 
 
