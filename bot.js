@@ -2,7 +2,32 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const prefix = ['d'];
 const request = require("request");
-console.log("Scrpit By Dream");
+const ytdl = require("ytdl-core");
+const canvas = require("canvas");
+const Canvas = require("canvas");
+const convert = require("hh-mm-ss")
+const fetchVideoInfo = require("youtube-info");
+const botversion = require('./package.json').version;
+const simpleytapi = require('simple-youtube-api')
+const moment = require("moment");
+const fs = require('fs');
+const util = require("util")
+const gif = require("gif-search");
+const opus = require("node-opus");
+const ms = require("ms");
+const jimp = require("jimp");
+const { get } = require('snekfetch');
+const guild = require('guild');
+const dateFormat = require('dateformat');//npm i dateformat
+const YouTube = require('simple-youtube-api');
+const youtube = new YouTube('AIzaSyAdORXg7UZUo7sePv97JyoDqtQVi3Ll0b8');
+const hastebins = require('hastebin-gen');
+const getYoutubeID = require('get-youtube-id');
+const yt_api_key = "AIzaSyDeoIH0u1e72AtfpwSKKOSy3IPp2UHzqi4";
+const pretty = require("pretty-ms");
+const queue = new Map();
+var table = require('table').table
+console.log("Scrpit By zizo");
 
 
 client.on("ready", function() {
@@ -129,20 +154,32 @@ client.on("message", message => {
   }
 });
 
-client.on("message", message => {
-  var prefix = "d";
-  var cats = [
-    "https://dog.ceo/api/breeds/image/random"
-  ];
-  var args = message.content.split(" ").slice(1);
-  if (message.content.startsWith(prefix + "dog")) {
-    var cat = new Discord.RichEmbed().setImage(
-      cats[Math.floor(Math.random() * cats.length)]
-    );
-    message.channel.sendEmbed(cat);
-  }
-});
+client.on('message', luxy => {
+       if(luxy.content === prefix + "oc" || luxy.content === "close chat") {
+                           if(!luxy.channel.guild) return luxy.reply(':white_check_mark: **This command only for servers**');
+ 
+   if(!luxy.member.hasPermission('MANAGE_MESSAGES')) return luxy.reply('**__you cant :@ __**');
+              luxy.channel.overwritePermissions(luxy.guild.id, {
+            SEND_MESSAGES: false
+ 
+              }).then(() => {
+                  luxy.reply("**__chat closed__ :lock: **")
+              });
+                }
 
+      if(luxy.content === prefix + "cc" || luxy.content === "open chat") {
+                        if(!luxy.channel.guild) return luxy.reply(':white_check_mark: **This command only for servers**');
+ 
+   if(!luxy.member.hasPermission('MANAGE_MESSAGES')) return luxy.reply('**__you cant :@ __**');
+              luxy.channel.overwritePermissions(luxy.guild.id, {
+            SEND_MESSAGES: true
+ 
+              }).then(() => {
+                  luxy.reply("**__chat opend__ :unlock: **")
+              });
+    }
+       
+});
 
 
 client.login(process.env.BOT_TOKEN1);
