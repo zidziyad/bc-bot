@@ -131,7 +131,7 @@ client.on("message", message => {
 
 client.on("message", message => {
   var prefix = "d";
-  var dog = [
+  var cats = [
     "http://palestine-kitchen.ps/wp-content/uploads/2017/12/%D9%86%D9%83%D8%AA-%D8%AF%D8%A8%D8%A7%D9%86%D8%A9.png",
     "http://www.i7lm.com/wp-content/uploads/2017/04/136769797816.jpg",
     "https://4.bp.blogspot.com/-p62zmDIDXmI/WKzqNt9smaI/AAAAAAAAC4Q/sW_bSIB8OaQhwOYFeplc3uzz8PBN7l3YACEw/s1600/13602501135.jpg",
@@ -141,7 +141,14 @@ client.on("message", message => {
     "https://www.petfinder.com/wp-content/uploads/2012/11/101438745-cat-conjunctivitis-causes.jpg",
     "http://www.shuuf.com/shof/uploads/2018/02/08/jpg/shof_97d686082bdb0a2.jpg"
   ];
-
+  var args = message.content.split(" ").slice(1);
+  if (message.content.startsWith(prefix + "dog")) {
+    var cat = new Discord.RichEmbed().setImage(
+      cats[Math.floor(Math.random() * cats.length)]
+    );
+    message.channel.sendEmbed(cat);
+  }
+});
 
 
 
