@@ -130,8 +130,8 @@ client.on("message", message => {
 });
 
 client.on("message", message => {
-  var prefix = "-";
-  var cats = [
+  var prefix = "d";
+  var dog = [
     "http://palestine-kitchen.ps/wp-content/uploads/2017/12/%D9%86%D9%83%D8%AA-%D8%AF%D8%A8%D8%A7%D9%86%D8%A9.png",
     "http://www.i7lm.com/wp-content/uploads/2017/04/136769797816.jpg",
     "https://4.bp.blogspot.com/-p62zmDIDXmI/WKzqNt9smaI/AAAAAAAAC4Q/sW_bSIB8OaQhwOYFeplc3uzz8PBN7l3YACEw/s1600/13602501135.jpg",
